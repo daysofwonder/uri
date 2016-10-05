@@ -18,6 +18,8 @@
 #include <type_traits>
 #include <network/uri/uri.hpp>
 
+#include <sstream>
+
 #ifdef NETWORK_URI_MSVC
 #pragma warning(push)
 #pragma warning(disable : 4251 4231 4660)
@@ -45,7 +47,13 @@ template <class T>
 struct port_converter<T, typename std::enable_if<std::is_integral<
                              typename std::decay<T>::type>::value>::type> {
   uri::string_type operator()(std::uint16_t port) const {
+#if 0
     return std::to_string(port);
+#else
+    std::ostringstream os ;
+    os << port ;
+    return os.str() ;
+#endif
   }
 };
 
