@@ -7,7 +7,11 @@
 cmake_minimum_required(VERSION 2.8)
 project(Uri)
 
+if(NOT NX)
 option(Uri_BUILD_TESTS "Build the URI tests." ON)
+else()
+option(Uri_BUILD_TESTS "Do not Build the URI tests on NX." OFF)
+endif()
 option(Uri_BUILD_DOCS "Build the URI documentation." ON)
 option(Uri_FULL_WARNINGS "Build the library with all warnings turned on." ON)
 option(Uri_WARNINGS_AS_ERRORS "Treat warnings as errors." ON)
