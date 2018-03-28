@@ -61,7 +61,7 @@ information and acquired knowledge:
 #           include <machine/endian.h>
 #       else
 #           if BOOST_OS_BSD
-#               if BOOST_OS_BSD_OPEN
+#               if BOOST_OS_BSD_OPEN || BOOST_OS_BSD_FREE
 #                   include <machine/endian.h>
 #               else
 #                   include <sys/endian.h>

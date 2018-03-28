@@ -153,6 +153,9 @@ http://www.boost.org/LICENSE_1_0.txt)
 #   if !defined(BOOST_OS_BSD_OPEN) && defined(OpenBSD4_9)
 #       define BOOST_OS_BSD_OPEN BOOST_VERSION_NUMBER(4,9,0)
 #   endif
+#   if !defined(BOOST_OS_BSD_OPEN) && defined(__ORBIS__)
+#       define BOOST_OS_BSD_OPEN BOOST_VERSION_NUMBER(__SCE_ORBIS_CLANG_MAJOR__,__SCE_ORBIS_CLANG_MINOR__,__SCE_ORBIS_CLANG_PATCHLEVEL__)
+#   endif
 #   if !defined(BOOST_OS_BSD_OPEN)
 #       define BOOST_OS_BSD_OPEN BOOST_VERSION_NUMBER_AVAILABLE
 #   endif

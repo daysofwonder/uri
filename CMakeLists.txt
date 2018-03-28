@@ -7,7 +7,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(Uri)
 
-if(NOT NX)
+if(NOT CONSOLE_DEV)
 option(Uri_BUILD_TESTS "Build the URI tests." ON)
 else()
 option(Uri_BUILD_TESTS "Do not Build the URI tests on NX." OFF)
